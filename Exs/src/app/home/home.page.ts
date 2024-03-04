@@ -9,11 +9,18 @@ export class HomePage {
 
   constructor() {}
 
-  nReal=''
+  nCel=''
   res=0
 
   converter(){
-    this.res=parseFloat(this.nReal)/4.97
+    let valorCel = parseFloat(this.nCel)
+
+    this.res=(9*valorCel+160)/5
     console.log(this.res)
   }
+
+  /*
+    Digite para Fahrenheit: (9*C+160)/5
+    Fahrenheit para Celsius: (F-32)*(5/9)
+  */
 }
