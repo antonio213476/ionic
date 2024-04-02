@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p>
+    Normal <br>
+    Inicial: R$5,00 <br>
+    Km Rodado: R$2,50 <br>
+  </p>
+  <p>
+    Superior <br>
+    Inicial: R$7,50 <br>
+    Km Rodado: R$3,50 <br>
+  </p>
+  <p>
+    VIP <br>
+    Inicial: R$10,00 <br>
+    Km Rodado: R$5,50 <br>
+  </p>
+
+  <ion-radio-group id="selecao" [(ngModel)]="selecao">
+    <ion-radio value="nor">Normal</ion-radio><br />
+    <ion-radio value="sup">Superior</ion-radio><br />
+    <ion-radio value="vip">VIP</ion-radio><br />
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-input label="Digite o numero de km rodados"
+    labelPlacement="floating"
+    placeholder="Digite aqui"
+    [(ngModel)]="kilometros"
+    >
+    </ion-input>
+  </ion-item>
+
+<ion-button id="convertedor" expand="block" (click)="converter()">Converter</ion-button>
+
+<ion-label>Valor final da viajem : {{res}}</ion-label>
+
+<ion-alert
+  id="botaoAlerta"
+  trigger="convertedor"
+  header="Alerta"
+  message="O corte do motorista foi: {{cortemotorista}} O corte do app foi {{corteApp}}"
+  [buttons]="alert"
+></ion-alert>
+</ion-content>

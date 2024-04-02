@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-item>
+      <ion-input label="Digite o primeiro valor"
+      labelPlacement="floating"
+      placeholder="Digite aqui"
+      [(ngModel)]="lado1"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Digite o segundo valor"
+      labelPlacement="floating"
+      placeholder="Digite aqui"
+      [(ngModel)]="lado2"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Digite o terceiro valor"
+      labelPlacement="floating"
+      placeholder="Digite aqui"
+      [(ngModel)]="lado3"
+      >
+      </ion-input>
+    </ion-item>
+
+
+
+  <ion-button expand="block" (click)="converter()">Converter</ion-button>
+
+  <ion-label>{{res}}</ion-label>
+
+
+</ion-content>
