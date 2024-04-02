@@ -7,36 +7,48 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+
   constructor() {}
 
-  lado1='';
-  lado2='';
-  lado3='';
-  res='';
+  kilometros='';
+  selecao='';
+  cortemotorista = 0;
+  corteApp = 0;
+  res=0;
+  alert = ['Fechar'];
 
   converter(){
-    let lado1C = parseFloat(this.lado1)
-    let lado2C = parseFloat(this.lado2)
-    let lado3C = parseFloat(this.lado3)
+    let kilometrosValor = parseFloat(this.kilometros)
 
+    let inicialNormal = 5
+    let inicialSuperior = 7.5
+    let inicialVip = 10
 
-    if (lado1C + lado2C > lado3C && lado1C + lado3C > lado2C && lado2C + lado3C > lado1C) {
-      if (lado1C === lado2C && lado2C === lado3C) {
-          this.res = "Equilátero";
-      } else if (lado1C === lado2C || lado1C === lado3C || lado2C === lado3C) {
-        this.res = "Isósceles";
-      } else {
-        this.res = "Escaleno";
-      }
-  } else {
-    this.res = "Não forma um triângulo";
+    let multiNormal = 2.5
+    let multiSuperior = 3.5
+    let multiVip = 5.5
+
+    if(this.selecao === 'nor') {
+      this.res = (kilometrosValor * multiNormal) + inicialNormal
+    } else if(this.selecao === 'sup') {
+      this.res = (kilometrosValor * multiSuperior) + inicialSuperior
+    } else {
+      this.res = (kilometrosValor * multiVip) + inicialVip
+    }
+    if(this.res > 150) {
+      this.corteApp = this.res * 0.2
+      this.cortemotorista = this.res * 0.8
+    } else {
+      this.corteApp = this.res * 0.25
+      this.cortemotorista = this.res * 0.75
+    }
   }
-    console.log(this.res)
-  }
+
 
   /*
-    Leia 3 valores referentes aos lados de um triângulo. Verifique se eles formam um triângulo e, se
-    formar, exiba o tipo (Equilátero, Isósceles ou Escaleno). Caso não forme um triângulo, avise ao
-    usuário.
+    O aplicativo fica com 25% do valor da viagem e o motorista com 75%. Quando o valor total da
+    viagem for superior a R$150,00 o App fica com 20% e o motorista com 80%
+    Exiba, em um alert, o valor final, o valor do Motorista e o valor do APP
   */
 }
+
