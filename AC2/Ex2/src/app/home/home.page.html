@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h5>
+    Preços por litro:
+  </h5>
+  <p>
+    Etanol: R$3,00 por km <br>
+    Gasolina: RS$4,00 por km <br>
+    Diesel: RS$5,00 por km
+  </p>
+
+  <ion-radio-group id="selecao" [(ngModel)]="combustivel">
+    <ion-radio value="eta">Etanol</ion-radio><br />
+    <ion-radio value="gas">Gasolina</ion-radio><br />
+    <ion-radio value="dis">Diesel</ion-radio><br />
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-input label="Digite o numero de km rodados"
+    labelPlacement="floating"
+    placeholder="Digite aqui"
+    [(ngModel)]="kilometros"
+    >
+    </ion-input>
+  </ion-item>
+
+<ion-button id="convertedor" expand="block" (click)="converter()">Converter</ion-button>
+
+
+  <ion-toast trigger="convertedor"
+  message="O valor final foi de R$ {{res}}"
+   [duration]="5000"></ion-toast>
+</ion-content>
