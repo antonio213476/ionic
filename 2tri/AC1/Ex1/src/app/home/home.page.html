@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pagar Emprestimos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <h1>Valor do emprestimo: {{valorEmprestimo}}</h1>
+    <ion-range [(ngModel)]="valorEmprestimo" (ionChange)="onIonChangeEvent($event)" [min]="0" [max]="10000"></ion-range>
+
+    <h1>Taxa de juros anual: {{valorJuros}}%</h1>
+    <ion-range [(ngModel)]="valorJuros" (ionChange)="onIonChangeEvent($event)" [min]="0" [max]="100"></ion-range>
+
+    <h1>Numero de meses: {{valorMeses}}</h1>
+    <ion-range [(ngModel)]="valorMeses" (ionChange)="onIonChangeEvent($event)" [min]="0" [max]="100" ></ion-range>
+
+    <ion-label>Prestação Mensal : {{valorMensal}}</ion-label>
+    <br>
+    <ion-label>Total a pagar pelo emprestimo : {{valorPagamento}}</ion-label>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Compras Ficticias.com
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <h1>Preço do produto: R$ {{valorOriginal}} </h1>
+    <br>
+
+    <h1>Desconto: {{valorDesconto}}%</h1>
+    <ion-range [(ngModel)]="valorDesconto" (ionChange)="onIonChangeEvent($event)" [min]="0" [max]="100"></ion-range>
+    <ion-label>Total do produto: R$ {{valorPagamento}}</ion-label>
+
+  </div>
+
+
+</ion-content>
